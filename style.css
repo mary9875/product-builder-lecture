@@ -1,1 +1,95 @@
-/* Add styles here */
+:root {
+    --primary-color: #4a90e2;
+    --background-color: #f0f2f5;
+    --text-color: #333;
+    --white: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+    background-image: subtle-noise-texture.png;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px var(--shadow-color);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.numbers-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.number-ball {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: spin 0.5s ease-out;
+}
+
+#generate-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+}
+
+#generate-btn:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+
+#generate-btn:active {
+    transform: translateY(0);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg) scale(0.2);
+    }
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* Number ball colors */
+.color-1 { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); }
+.color-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.color-3 { background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%); }
+.color-4 { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); }
+.color-5 { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); }
+.color-6 { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); }

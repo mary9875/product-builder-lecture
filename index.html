@@ -1,53 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<title>Lotto Generator</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 100px;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.numbers {
-    margin-top: 30px;
-    font-size: 22px;
-    font-weight: bold;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 로또 번호 생성기</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+        <span id="theme-text">라이트 모드</span>
+    </div>
 
-<h1>🎯 Lotto Number Generator</h1>
-<button onclick="generateNumbers()">Generate Numbers</button>
+    <div class="container">
+        <h1>🎯 로또 번호 생성기</h1>
+        <div class="numbers-container">
+            <!-- 번호 공이 여기에 생성됩니다 -->
+        </div>
+        <button id="generate-btn">번호 생성하기</button>
+    </div>
 
-<div class="numbers" id="result"></div>
-
-<script>
-function generateNumbers() {
-    let numbers = [];
-
-    while(numbers.length < 6) {
-        let num = Math.floor(Math.random() * 45) + 1;
-        if(!numbers.includes(num)) {
-            numbers.push(num);
-        }
-    }
-
-    numbers.sort((a,b) => a-b);
-
-    document.getElementById("result").innerText = numbers.join("  ");
-}
-</script>
-
+    <script src="main.js"></script>
 </body>
 </html>

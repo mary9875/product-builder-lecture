@@ -53,6 +53,11 @@ h2 { font-size: 1.5em; }
     text-align: left;
 }
 
+.disqus-container {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
 .form-group {
     margin-bottom: 20px;
 }

@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎯 로또 번호 생성기</title>
+    <title>🎯 로또 & 🐶 동물상 테스트</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Teachable Machine Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
     <div class="theme-switch-wrapper">
@@ -21,6 +24,24 @@
             <!-- 번호 공이 여기에 생성됩니다 -->
         </div>
         <button id="generate-btn">번호 생성하기</button>
+    </div>
+
+    <!-- Animal Face Test Section -->
+    <div class="container animal-test">
+        <h2>🐶 동물상 테스트 🐱</h2>
+        <p class="description">당신은 강아지상일까요, 고양이상일까요?<br>카메라를 켜서 확인해보세요!</p>
+        
+        <div id="webcam-wrapper">
+            <div id="webcam-container"></div>
+            <div id="loading-spinner" class="hidden">모델을 불러오는 중...</div>
+        </div>
+        
+        <button type="button" id="start-test-btn">테스트 시작하기</button>
+        
+        <div id="label-container">
+            <!-- 결과 게이지가 여기에 생성됩니다 -->
+        </div>
+        <div id="result-message"></div>
     </div>
 
     <div class="container inquiry-form">

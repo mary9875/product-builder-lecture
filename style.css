@@ -48,10 +48,103 @@ h1, h2 {
 h1 { font-size: 2em; }
 h2 { font-size: 1.5em; }
 
-/* Inquiry Form Styles */
-.inquiry-form {
+/* Animal Test Styles */
+.animal-test {
+    margin-bottom: 40px;
+}
+
+.description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+#webcam-wrapper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 25px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #eee;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+#webcam-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+#loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #666;
+    font-weight: bold;
+}
+
+#start-test-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 30px;
+}
+
+#start-test-btn:hover {
+    transform: scale(1.05);
+    background-color: #ff5252;
+}
+
+#label-container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
     text-align: left;
 }
+
+.result-bar-wrapper {
+    margin-bottom: 15px;
+}
+
+.result-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.bar-container {
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#result-message {
+    margin-top: 20px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.hidden { display: none; }
 
 .disqus-container {
     text-align: left;

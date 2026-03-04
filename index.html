@@ -13,6 +13,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 </head>
 <body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">🎯 Luck & AI</div>
+            <ul class="nav-links">
+                <li><a href="#lotto-section">로또 생성기</a></li>
+                <li><a href="#animal-section">동물상 테스트</a></li>
+                <li><a href="#inquiry-section">제휴 문의</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="theme-switch-wrapper">
         <label class="theme-switch" for="checkbox">
             <input type="checkbox" id="checkbox" />
@@ -21,18 +32,23 @@
         <span id="theme-text">라이트 모드</span>
     </div>
 
-    <div class="container">
+    <div id="lotto-section" class="container">
         <h1>🎯 로또 번호 생성기</h1>
+        <p class="section-desc">매주 행운을 시험해보세요! 저희 로또 번호 생성기는 순수 난수 생성 알고리즘을 사용하여 1부터 45까지의 숫자 중 중복되지 않는 6개의 행운 숫자를 뽑아드립니다. 여러분의 당첨 확률을 높여줄 행운의 조합을 지금 바로 확인해보세요.</p>
         <div class="numbers-container">
             <!-- 번호 공이 여기에 생성됩니다 -->
         </div>
-        <button id="generate-btn">번호 생성하기</button>
+        <button id="generate-btn">행운의 번호 생성하기</button>
+        <div class="info-box">
+            <h3>💡 로또 상식</h3>
+            <p>로또 6/45는 45개의 숫자 중 6개를 맞히는 게임으로, 1등 당첨 확률은 약 8,145,060분의 1입니다. 매주 토요일 저녁 추첨이 진행됩니다.</p>
+        </div>
     </div>
 
     <!-- Animal Face Test Section -->
-    <div class="container animal-test">
-        <h2>🐶 동물상 테스트 🐱</h2>
-        <p class="description">사진을 업로드하여 당신의 동물상을 확인해보세요!</p>
+    <div id="animal-section" class="container animal-test">
+        <h2>🐶 인공지능 동물상 테스트 🐱</h2>
+        <p class="description">Google의 Teachable Machine 기술을 활용한 최첨단 AI 동물상 테스트입니다. 수만 장의 데이터를 학습한 인공지능이 당신의 얼굴 사진을 분석하여 가장 닮은 동물상을 찾아드립니다. 사진 데이터는 서버에 저장되지 않으며 오직 브라우저에서만 분석되므로 안심하고 이용하세요!</p>
         
         <div id="image-preview-wrapper">
             <img id="face-image" src="#" alt="미리보기" class="hidden">
@@ -40,7 +56,7 @@
         </div>
         
         <div class="upload-btn-wrapper">
-            <label for="image-upload" id="upload-label">사진 업로드</label>
+            <label for="image-upload" id="upload-label">내 동물상 확인하기</label>
             <input type="file" id="image-upload" accept="image/*">
         </div>
         
@@ -48,10 +64,16 @@
             <!-- 결과 게이지가 여기에 생성됩니다 -->
         </div>
         <div id="result-message"></div>
+
+        <div class="info-box">
+            <h3>🧪 기술 스택 안내</h3>
+            <p>본 서비스는 TensorFlow.js와 Teachable Machine 모델을 기반으로 제작되었습니다. 딥러닝 기술을 통해 강아지상, 고양이상, 토끼상, 공룡상 등 다양한 특징을 정밀하게 분석합니다.</p>
+        </div>
     </div>
 
-    <div class="container inquiry-form">
-        <h2>🤝 제휴 문의</h2>
+    <div id="inquiry-section" class="container inquiry-form">
+        <h2>🤝 제휴 및 서비스 문의</h2>
+        <p class="section-desc">서비스 이용 중 불편한 점이나 제휴 제안이 있으시면 언제든지 문의해 주세요. 최대한 빠른 시일 내에 답변 드리겠습니다.</p>
         <form action="https://formspree.io/f/xqedjaye" method="POST">
             <div class="form-group">
                 <label for="name">이름/업체명</label>
@@ -74,18 +96,10 @@
     </div>
 
     <div class="container disqus-container">
-        <h2>💬 댓글 서비스</h2>
+        <h2>💬 커뮤니티 댓글</h2>
+        <p class="section-desc">행운의 당첨 소식이나 재미있는 동물상 테스트 결과를 다른 사람들과 공유해 보세요!</p>
         <div id="disqus_thread"></div>
         <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
             (function() { // DON'T EDIT BELOW THIS LINE
             var d = document, s = d.createElement('script');
             s.src = 'https://productbuilder-4dlceqgbtb.disqus.com/embed.js';
@@ -94,6 +108,33 @@
             })();
         </script>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Luck & AI. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" onclick="showPrivacyPolicy(); return false;">개인정보처리방침</a>
+                <a href="#inquiry-section">제휴문의</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="hidePrivacyPolicy()">&times;</span>
+            <h2>개인정보처리방침</h2>
+            <div class="policy-text">
+                <p>Luck & AI(이하 '회사')는 이용자의 개인정보를 중요시하며, '개인정보 보호법'을 준수하고 있습니다.</p>
+                <h3>1. 개인정보 수집 및 이용 목적</h3>
+                <p>회사는 제휴 문의 응대를 위해서만 이름과 이메일 주소를 수집합니다. AI 동물상 테스트에 사용되는 사진은 서버에 전송되거나 저장되지 않으며, 사용자 브라우저 내에서만 처리됩니다.</p>
+                <h3>2. 개인정보 보유 및 이용 기간</h3>
+                <p>수집된 문의 내역은 답변 완료 후 1년간 보관 후 파기됩니다.</p>
+                <h3>3. 쿠키 및 광고 서비스</h3>
+                <p>본 사이트는 Google AdSense를 이용하며, 광고 게재를 위해 쿠키를 사용할 수 있습니다. 사용자는 브라우저 설정에서 쿠키 수집을 거부할 수 있습니다.</p>
+            </div>
+        </div>
     </div>
 
     <script src="main.js"></script>

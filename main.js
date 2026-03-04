@@ -79,3 +79,23 @@ document.addEventListener('DOMContentLoaded', () => {
         resultMessage.textContent = `당신은 귀여운 ${bestMatch}상입니다! ${emoji}`;
     }
 });
+
+// Privacy Policy Modal functions
+function showPrivacyPolicy() {
+    document.getElementById('privacy-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function hidePrivacyPolicy() {
+    document.getElementById('privacy-modal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('privacy-modal');
+    if (event.target == modal) {
+        hidePrivacyPolicy();
+    }
+}
+
